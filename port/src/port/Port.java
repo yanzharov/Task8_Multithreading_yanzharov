@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
 
 import org.apache.log4j.Logger;
 
@@ -26,10 +27,10 @@ public class Port {
 	}
         /*Старая версия:
           usedBerths = new HashMap<Ship, Berth>(); 
-          Лучше заменить HashMap на Hashtable, потому что могут одновременно выполняться
+          Лучше заменить HashMap на ConcurrentHashMap, потому что могут одновременно выполняться
           операции добавления и удаления
         */
-	usedBerths = new Hashtable<Ship, Berth>(); // создаем объект, который будет
+	usedBerths = new ConcurrentHashMap<Ship, Berth>(); // создаем объект, который будет
 	// хранить связь между кораблем и причалом
 	logger.debug("Порт создан.");
     }
