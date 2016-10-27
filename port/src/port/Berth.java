@@ -51,6 +51,8 @@ public class Berth {
     }
 	
     private boolean doMoveFromShip(Warehouse shipWarehouse, int numberOfConteiners) throws InterruptedException{
+	//блокировка склада корабля необязательна, поскольку склад порта один на все причалы
+	//и проблем синхронизации возникать не должно. Однако это не ошибка.
 	Lock shipWarehouseLock = shipWarehouse.getLock();
 	boolean shipLock = false;
 		
