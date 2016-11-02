@@ -48,7 +48,7 @@ public class Ship implements Runnable {
 	    logger.error("С кораблем случилась неприятность и он уничтожен.", e);
 	} 
         catch (PortException e) {
-	    logger.error("С кораблем случилась неприятность и он уничтожен.", e);//!!! переписать сообщение
+	    logger.error("С кораблем случилась неприятность и он уничтожен.", e);
 	}
     }
 
